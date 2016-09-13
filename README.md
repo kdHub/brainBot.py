@@ -9,3 +9,9 @@ Link to brain
 ----------------
 http://brainshop.ai/brain/303/training
 
+Logs
+----------------
+http://brainshop.ai/brain/303/logs
+
+
+
