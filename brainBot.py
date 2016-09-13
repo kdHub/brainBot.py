@@ -77,7 +77,7 @@ dump = response.json()
 sunrise = dump['results']['sunrise']
 sunset = dump['results']['sunset']
 day_length = dump['results']['day_length']
-print str(day_length/60)
+
 
 sunrise = sunrise[:8]
 sunset = sunset[:8]
@@ -95,11 +95,8 @@ sunset_utc = datetime.strptime(sunset, '%H:%M:%S')
 sunrise_utc = sunrise_utc.replace(tzinfo=from_zone)
 sunset_utc = sunset_utc.replace(tzinfo=from_zone)
 # Convert time zone
-sunset_est = utc.astimezone(to_zone)
-sunrise_est = utc.astimezone(to_zone)
-print sunrise_est
-print sunset_est
-
-url = "http://api.brainshop.ai/get"
-print sunrise
-print sunset
+sunset_est = sunset_utc.astimezone(to_zone)
+sunrise_est = sunrise_utc.astimezone(to_zone)
+print "Sunrise: "+str(sunrise_est)[11:-6]+" am"
+print "Sunset: "+str(sunset_est)[11:-6]+" pm"
+print "Length of day: "+day_length
