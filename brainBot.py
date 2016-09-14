@@ -101,6 +101,23 @@ def sunInfo()
     sunrise_est = sunrise_utc.astimezone(to_zone)
     return "Sunrise: "+str(sunrise_est)[11:-6]+" am"+ "Sunset: "+str(sunset_est)[11:-6]+" pm"+"Length of day: "+day_length
 
+def programO(msg, botId, convoId):
+    '''Bot ID	Name	Description
+    6	Program O	The original chatbot
+    10	ShakespeareBot	Talk to William Shakespeare!
+    12	Chatmundo	Talk to the twitterbot!
+    15	Elizaibeth	Talk to me!'''
+    url = "http://api.program-o.com/v2/chatbot/"
+    
+    querystring = {"bot_id":botId,"say":msg,"convo_id":convoId,"format":"json"}
+    
+    headers = {
+        'cache-control': "no-cache"
+        }
+    
+    response = requests.request("GET", url, headers=headers, params=querystring)
+
+
 #usage
 msg = "hello world"
 print brainShop(msg)
