@@ -102,7 +102,8 @@ def sunInfo()
     return "Sunrise: "+str(sunrise_est)[11:-6]+" am"+ "Sunset: "+str(sunset_est)[11:-6]+" pm"+"Length of day: "+day_length
 
 def programO(msg, botId, convoId):
-    '''Bot ID	Name	Description
+    '''http://blog.program-o.com/api.php
+    Bot ID	Name	Description
     6	Program O	The original chatbot
     10	ShakespeareBot	Talk to William Shakespeare!
     12	Chatmundo	Talk to the twitterbot!
