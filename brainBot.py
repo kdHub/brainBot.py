@@ -5,6 +5,32 @@ import random
 from datetime import datetime
 from dateutil import tz
 
+def geoIP(ipaddr):
+    url = "http://freegeoip.net/json/github.com"
+    
+    headers = {
+        'cache-control': "no-cache",
+        
+        }
+    
+    response = requests.request("GET", url, headers=headers)
+    
+    dump = response.json()
+    
+    ipaddress =  dump['ip']
+    country_code = dump['country_code']
+    country_name = dump['country_name']
+    region_code = dump['region_code']
+    region_name = dump['region_name']
+    city = dump['city']
+    zip_code = dump['zip_code']
+    time_zone = dump['time_zone']
+    latitude = dump['latitude']
+    longitude = dump['longitude']
+    metro_code = dump['metro_code']
+    
+    
+
 def brainShop(msg)
     url = 'http://api.brainshop.ai/get'
     querystring = {"bid":"303","key":"UMVEIqUn9ncSty88","uid":"100","msg":msg}
